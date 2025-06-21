@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom'
 import './App.css'
 import NavBar from './Component/NavBar'
-import Banner from './Component/Banner'
+import BlogsPage from './Component/BlogsPage'
 
 function App() {
   
@@ -10,6 +10,8 @@ function App() {
     <>
     <NavBar/>
     <Outlet/>
+    
+     
     </>
   )
 }
