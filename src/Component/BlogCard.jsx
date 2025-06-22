@@ -5,7 +5,9 @@ import { FaUser } from 'react-icons/fa6';
 
 const BlogCard = ({blogs , currentPage , pageSize , selectedCategory}) => {
 
-      const filteredBlogs = blogs;
+      const filteredBlogs = blogs
+      .filter((blog)=> !selectedCategory || blog.category == selectedCategory )
+      .slice((currentPage - 1)  *pageSize , currentPage * pageSize );
 
 
   return (
