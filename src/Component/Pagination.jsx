@@ -9,7 +9,7 @@ const Pagination = ({onPageChange, currentPage , pageSize , blogs}) => {
     const renderPaginationLinks = ()=>
     {
         return Array.from({length: totalPages}, (_,i) => i+1 ).map((pageNumber) => (
-            <li className={pageNumber === currentPage ? "activePagination": ""}  key= {pageNumber}>
+            <li className={pageNumber === currentPage ? 'activePagination': ''}  key= {pageNumber}>
                 <a href="#" onClick={()=> onPageChange(pageNumber)}>{pageNumber}</a>
             </li>
         ))
@@ -20,22 +20,15 @@ const Pagination = ({onPageChange, currentPage , pageSize , blogs}) => {
         
 
 
-
-    
-
-
-
-
-
   return (
     
-        <ul className='flex justify-center items-center flex-wrap gap-4'>
+        <ul className='pagination my-8 flex-wrap gap-4'>
             <li className='m-0'>
                 <button onClick={()=> onPageChange(currentPage - 1)} disabled={currentPage === 1} > Previous </button>
 
             </li>
 
-            <div className='px-5 py-10  rounded text-purple-500 hover:bg-purple-500 hover:text-white cursor-pointer flex gap-24' >
+            <div className='flex gap-2' >
                 {renderPaginationLinks()}
             </div>
 

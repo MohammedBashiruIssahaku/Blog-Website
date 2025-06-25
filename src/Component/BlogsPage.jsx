@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import BlogCard from './BlogCard';
 import Pagination from './Pagination';
+import CategorySelection from './CategorySelection';
 
 const BlogsPage = () => {
     const [blogs, setBlogs] = useState([]);
@@ -12,7 +13,7 @@ const BlogsPage = () => {
     useEffect(()=>
     {
         async function fetchData(){
-            const url = `http://localhost:5000/blogs?&page=${currentPage}&limit=${pageSize}`;
+            let url = `http://localhost:3000/blogs?&page=${currentPage}&limit=${pageSize}`;
 
             //filter by category
             if(selectedCategory)
@@ -48,7 +49,7 @@ const BlogsPage = () => {
     <div>
       {/* Category Section */}
       <div>
-          <p>Category Section</p>
+          <CategorySelection onSelectedCategory = {handleCategoryChange} selectedCategory = {selectedCategory} activeCategory= {activeCategory}/>
       </div>
 
       {/* BlogCards Section */}
