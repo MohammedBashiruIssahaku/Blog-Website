@@ -46,7 +46,7 @@ const BlogsPage = () => {
 
 
   return (
-    <div>
+    <div className=''>
       {/* Category Section */}
       <div>
           <CategorySelection onSelectedCategory = {handleCategoryChange} selectedCategory = {selectedCategory} activeCategory= {activeCategory}/>
@@ -58,7 +58,7 @@ const BlogsPage = () => {
       </div>
        
        {/* Pagination Section */}
-       <div>
+       <div className='py-14'>
          <Pagination onPageChange = {handlePageChange} currentPage={currentPage} pageSize = {pageSize} blogs={blogs}/>
 
        </div>
