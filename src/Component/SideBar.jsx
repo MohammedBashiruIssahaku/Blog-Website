@@ -9,14 +9,14 @@ const SideBar = () => {
 
       useEffect(()=>
     {
-        fetch("http://localhost:3000/blogs")
+        fetch("/blogsData.json")
         .then(res => res.json())
         .then(data => setSideBlogs(data.slice(0,15)))
         .catch(error => console.log(error))
         console.log(sideBlogs);
 
     },
-    [sideBlogs]
+    []
 )
 
 
